@@ -11,7 +11,7 @@ interface Picture {
 }
 
 
-const memeArray = [
+const memeArray:Array<Picture> = [
 	{
 		name: 'meme',
 		src: 'https://miro.medium.com/max/500/0*UpfsvduyJxP9_0lT.jpg'
@@ -27,7 +27,7 @@ const memeArray = [
 	}
 ];
 
-const jokeArray = [
+const jokeArray:Array<Picture> = [
 	{
 		name: 'joke',
 		src: "Why was the JavaScript developer sad? a. Because they didn't Node how to Express himself"

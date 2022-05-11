@@ -22,6 +22,6 @@ function renderPicture(domElement) {
         image.src = domElement.src;
     }
     else if (domElement.name = "joke") {
-        textArea.innerHTML = domElement.src;
+        textArea.innerText = domElement.src;
     }
 }

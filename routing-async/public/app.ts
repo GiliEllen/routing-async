@@ -19,9 +19,9 @@ function renderPicture(domElement) {
     const textArea: HTMLElement = document.querySelector("#jokeArea");
   console.log(domElement)
     if(domElement.name = "meme") {
-      image.src = domElement.src
+      image.src = domElement.src;
     } else if (domElement.name = "joke"){
-      textArea.innerHTML = domElement.src;
+      textArea.innerText = domElement.src;
     }
   }
   
