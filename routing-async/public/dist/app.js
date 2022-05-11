@@ -4,19 +4,24 @@ function handleGetClick() {
         axios.get("/api/randomImage").then(function (_a) {
             var data = _a.data;
             console.log(data);
-            var imagetry = data;
-            var picture = data.picture, error = data.error;
+            var domElement = data.domElement, error = data.error;
             if (error)
                 throw new Error(error);
-            console.log(imagetry);
-            renderPicture(picture);
+            renderPicture(domElement);
         });
     }
     catch (error) {
         console.error(error);
     }
 }
-function renderPicture(picture) {
+function renderPicture(domElement) {
     var image = document.querySelector("#imageToChange");
-    image.src = "" + picture.src;
+    var textArea = document.querySelector("#jokeArea");
+    console.log(domElement);
+    if (domElement.name = "meme") {
+        image.src = domElement.src;
+    }
+    else if (domElement.name = "joke") {
+        textArea.innerHTML = domElement.src;
+    }
 }

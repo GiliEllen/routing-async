@@ -10,17 +10,18 @@ interface Picture {
 	src: string;
 }
 
+
 const memeArray = [
 	{
-		name: 'meme1',
+		name: 'meme',
 		src: 'https://miro.medium.com/max/500/0*UpfsvduyJxP9_0lT.jpg'
 	},
 	{
-		name: 'meme2',
+		name: 'meme',
 		src: 'https://www.freecodecamp.org/news/content/images/2019/07/panel-3-1.png'
 	},
 	{
-		name: 'meme3',
+		name: 'meme',
 		src:
 			'https://res.cloudinary.com/practicaldev/image/fetch/s--ij_hqKUb--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://github.com/damiancipolat/js_vs_memes/blob/master/doc/mind_js.jpg%3Fraw%3Dtrue'
 	}
@@ -28,15 +29,15 @@ const memeArray = [
 
 const jokeArray = [
 	{
-		name: 'joke1',
+		name: 'joke',
 		src: "Why was the JavaScript developer sad? a. Because they didn't Node how to Express himself"
 	},
 	{
-		name: 'joke2',
+		name: 'joke',
 		src: 'q. How do you comfort a JavaScript bug? a. You console it'
 	},
 	{
-		name: 'joke3',
+		name: 'joke',
 		src: "Why do JavaScripters wear glasses? Because they don't C#"
 	}
 ];
@@ -66,7 +67,7 @@ function getRandomInt(max) {
 app.get('/api/randomImage', (req, res) => {
 	try {
 		const arr = memeOrJoke();
-		res.send({ DOMElement: arr[getRandomInt(3)] });
+		res.send({ domElement: arr[getRandomInt(3)] });
 	} catch (error) {
 		res.send({ error: error.message });
 	}

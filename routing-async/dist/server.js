@@ -1,16 +1,34 @@
 var express = require('express');
 var Interface = require('readline').Interface;
 var app = express();
-var port = process.env.PORT || 4000;
+var port = process.env.PORT || 3000;
 app.use(express.static('public'));
-var imageArray = [
+var memeArray = [
     {
-        name: 'man',
-        src: 'https://images.unsplash.com/photo-1557862921-37829c790f19?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bWFufGVufDB8fDB8fA%3D%3D&w=1000&q=80'
+        name: 'meme',
+        src: 'https://miro.medium.com/max/500/0*UpfsvduyJxP9_0lT.jpg'
     },
     {
-        name: 'woman',
-        src: 'https://img.freepik.com/free-photo/indoor-shot-beautiful-happy-african-american-woman-smiling-cheerfully-keeping-her-arms-folded-relaxing-indoors-after-morning-lectures-university_273609-1270.jpg?size=626&ext=jpg&ga=GA1.1.2011762371.1644019200'
+        name: 'meme',
+        src: 'https://www.freecodecamp.org/news/content/images/2019/07/panel-3-1.png'
+    },
+    {
+        name: 'meme',
+        src: 'https://res.cloudinary.com/practicaldev/image/fetch/s--ij_hqKUb--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://github.com/damiancipolat/js_vs_memes/blob/master/doc/mind_js.jpg%3Fraw%3Dtrue'
+    }
+];
+var jokeArray = [
+    {
+        name: 'joke',
+        src: "Why was the JavaScript developer sad? a. Because they didn't Node how to Express himself"
+    },
+    {
+        name: 'joke',
+        src: 'q. How do you comfort a JavaScript bug? a. You console it'
+    },
+    {
+        name: 'joke',
+        src: "Why do JavaScripters wear glasses? Because they don't C#"
     }
 ];
 app.listen(port, function () {
@@ -19,9 +37,23 @@ app.listen(port, function () {
 function getRandomArbitrary() {
     return Math.round(Math.random());
 }
+function memeOrJoke() {
+    if (getRandomArbitrary()) {
+        var arr = jokeArray;
+        return arr;
+    }
+    else {
+        var arr = memeArray;
+        return arr;
+    }
+}
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+}
 app.get('/api/randomImage', function (req, res) {
     try {
-        res.send({ picture: imageArray[getRandomArbitrary()] });
+        var arr = memeOrJoke();
+        res.send({ domElement: arr[getRandomInt(3)] });
     }
     catch (error) {
         res.send({ error: error.message });

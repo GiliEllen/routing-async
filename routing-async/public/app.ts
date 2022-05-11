@@ -4,18 +4,24 @@ function handleGetClick() {
     try {
         axios.get("/api/randomImage").then(({ data }) => {
           console.log(data);
-          const { DOMElement, error } = data;
+          const { domElement, error } = data;
           if (error) throw new Error(error);
-          renderPicture(DOMElement);
+          renderPicture(domElement);
         });
       } catch (error) {
         console.error(error);
       }
 }
 
-function renderPicture(DOMElement) {
+
+function renderPicture(domElement) {
     const image: HTMLImageElement = document.querySelector("#imageToChange");
-  console.log(typeof(DOMElement))
-    // image.src = `${picture.src}`;
+    const textArea: HTMLElement = document.querySelector("#jokeArea");
+  console.log(domElement)
+    if(domElement.name = "meme") {
+      image.src = domElement.src
+    } else if (domElement.name = "joke"){
+      textArea.innerHTML = domElement.src;
+    }
   }
   
