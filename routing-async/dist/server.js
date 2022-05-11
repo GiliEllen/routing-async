@@ -53,6 +53,7 @@ function getRandomInt(max) {
 app.get('/api/randomImage', function (req, res) {
     try {
         var arr = memeOrJoke();
+        console.log(arr);
         res.send({ domElement: arr[getRandomInt(3)] });
     }
     catch (error) {
