@@ -1,0 +1,32 @@
+body {
+  margin: 0%;
+  padding: 0%;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+}
+
+#btn1 {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
+  padding: 20px 30px;
+  font-size: larger;
+  font-weight: bolder;
+  margin: auto;
+  cursor: pointer;
+}
+#btn1:hover {
+  transition: 1s all;
+  animation-name: changeSize;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes changeSize {
+  50% {
+    background-color: gray;
+  }
+}

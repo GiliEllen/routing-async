@@ -19,8 +19,10 @@ function renderPicture(domElement) {
     var textArea = document.querySelector("#jokeArea");
     if (domElement.name === "meme") {
         image.src = domElement.src;
+        textArea.innerText = "";
     }
     else if (domElement.name === 'joke') {
         textArea.innerText = domElement.src;
+        image.src = "";
     }
 }
